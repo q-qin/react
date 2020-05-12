@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {setCount,} from '../redux/actions'
 import styles from './home.module.scss';
+import { Button } from 'zent';
 
 class ReduxTest extends Component {
   componentDidMount() {
@@ -12,7 +13,7 @@ class ReduxTest extends Component {
     return (
       <div className={`${styles.test}`}>
         <h2>当月工资为{tiger}</h2>
-        <button onClick={PayIncrease}>升职加薪</button>
+        <Button type="success" onClick={PayIncrease}>升职加薪</Button>
       </div>
     );
   }

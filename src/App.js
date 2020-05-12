@@ -1,14 +1,15 @@
 import React,{ Component } from 'react';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {Router as HashRouter} from 'react-router-dom';
 import Routes from './router/index'
-
+const createHistory = require('history').createHashHistory
+const history = createHistory();
 
 class App extends Component  {
   render() {
     return (
-      <Router>
+      <HashRouter  history={history}>
         <Routes></Routes>
-      </Router>
+      </HashRouter>
     );
   }
 }

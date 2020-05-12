@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button,Input } from 'zent';
+import { Button,Input,Notify } from 'zent';
 import styles from './login.module.scss';
 
 class Login extends Component {
@@ -19,6 +19,10 @@ class Login extends Component {
   }
   login = () =>{
     console.log(this.state);
+    Notify.success('登录成功',1500,()=>{
+      localStorage.setItem('_token',this.state.name);
+      this.props.history.push('/')
+    })
   }
   render() {
     return (
